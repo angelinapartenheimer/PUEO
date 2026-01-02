@@ -14,7 +14,7 @@ plt.figure()
 
 #Read a digitized spectrum from a text file; used for comparing to published work
 def read_digitized_spec(filename, err = False): 
-    data = pl.genfromtxt('data/digitized/'+filename, delimiter = ',')
+    data = pl.genfromtxt('digitized/'+filename, delimiter = ',')
     bins, spec = data[:, 0], data[:, 1]
     if err: 
         errorbar = data[:, 2] - spec
