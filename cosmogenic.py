@@ -47,7 +47,7 @@ AugerBins, AugerSpec, Auger_err = get_Auger()
 
 #Read CRPropa simulation output
 def read_crpropa(outfilename): 
-    data = pl.genfromtxt('data/simulation/'+outfilename, names=True)
+    data = pl.genfromtxt(outfilename, names=True)
     cr_data = data[np.where([pid not in [12, 14, 16] for pid in abs(data['ID'])])[0]]
     nu_data = data[np.where([pid in [12, 14, 16] for pid in abs(data['ID'])])[0]]
     return cr_data, nu_data
